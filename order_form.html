@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Form</title>
+  </head>
+  <body>
+    <h2>Order Form</h2>
+    <form action="form-submit.php" method="post">
+        <div style="display: flex; flex-direction: column; align-items: left;">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" style="margin-bottom: 10px; padding: 5px;">
+      
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" name="surname" style="margin-bottom: 10px; padding: 5px;">
+      
+          <label for="contactNumber">Contact Number:</label>
+          <input type="text" id="contactNumber" name="contactNumber" style="margin-bottom: 10px; padding: 5px;">
+      
+          <label for="order">Order:</label>
+          <input type="text" id="order" name="order" style="margin-bottom: 10px; padding: 5px;">
+        </div>
+      
+        <input type="submit" value="Submit" style="margin-top: 10px;">
+      </form>
+      
+      <script>
+        const form = document.querySelector("form");
+      
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+      
+          const name = document.querySelector("#name").value;
+          const surname = document.querySelector("#surname").value;
+          const contactNumber = document.querySelector("#contactNumber").value;
+          const order = document.querySelector("#order").value;
+      
+          if (!name || !surname || !contactNumber || !order) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+      
+          form.submit();
+        });
+      </script>
+      
